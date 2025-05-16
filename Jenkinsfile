@@ -3,7 +3,7 @@ pipeline {
 
   environment {
     DOCKERHUB_CREDENTIALS = 'dockerhub-cred'                // Jenkins에 등록한 Docker Hub 자격증명 ID
-    IMAGE_NAME = 'visionn7111/nginx-web'                    // Docker Hub 저장소명
+    IMAGE_NAME = 'visionn7111/nginx-test'                    // Docker Hub 저장소명
     SERVER_IP = '13.124.177.239'                            // 웹서버 IP
   }
 
