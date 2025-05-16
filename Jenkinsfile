@@ -38,14 +38,14 @@ pipeline {
     stage('Deploy to Web Server') {
       steps {
         sshagent(credentials: ['webserver-ssh-key']) {
-          sh '''
-          ssh -o StrictHostKeyChecking=no ubuntu@$SERVER_IP '
-            docker pull $IMAGE_NAME &&
-            docker stop nginx-web || true &&
-            docker rm nginx-web || true &&
-            docker run -d --name nginx-web -p 80:80 $IMAGE_NAME
-          '
-          '''
+          sh """
+            ssh -o StrictHostKeyChecking=no ubuntu@$SERVER_IP '
+              docker pull ${IMAGE_NAME} &&
+              docker stop nginx-web || true &&
+              docker rm nginx-web || true &&
+              docker run -d --name nginx-web -p 80:80 ${IMAGE_NAME}
+            '
+          """
         }
       }
     }
