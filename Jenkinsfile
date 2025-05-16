@@ -28,7 +28,7 @@ pipeline {
           passwordVariable: 'tjdrhdgkfrp1!'
         )]) {
           sh '''
-            echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+            echo tjdrhdgkfrp1! | docker login -u visionn7111 --password-stdin
             docker push $IMAGE_NAME
           '''
         }
